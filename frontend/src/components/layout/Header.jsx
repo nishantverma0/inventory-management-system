@@ -21,15 +21,15 @@ export default function Header({
 
       <div className="header-actions">
         <button className="icon-btn">
-  <Bell size={18} />
-</button>
+          <Bell size={18} />
+        </button>
 
-<button
-  className="icon-btn"
-  onClick={() =>
-    setDarkMode(!darkMode)
-  }
->
+        <button
+          className="icon-btn"
+          onClick={() =>
+            setDarkMode(!darkMode)
+          }
+        >
           {darkMode ? (
             <Sun size={18} />
           ) : (
