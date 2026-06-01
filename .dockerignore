@@ -1,0 +1,12 @@
+.git/
+.github/
+node_modules/
+dist/
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+*.log
+.env
+inventory.db
+
