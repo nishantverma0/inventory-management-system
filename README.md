@@ -1,151 +1,82 @@
 # Inventory & Order Management System
 
-A production-ready full-stack assessment project with a React frontend, FastAPI backend, PostgreSQL persistence, Docker images, and Docker Compose orchestration.
+A production-ready, full-stack Inventory & Order Management platform designed to demonstrate modern software engineering practices, scalable architecture, and end-to-end application deployment. The solution enables organizations to efficiently manage products, customers, orders, and inventory operations through an intuitive web interface backed by a robust REST API.
 
-## Tech Stack
+Built using React, FastAPI, PostgreSQL, Docker, and cloud deployment services, the application follows industry-standard development workflows, including containerization, automated validation, API documentation, and responsive user experience design.
 
-- Frontend: React, Vite, JavaScript, Lucide icons
-- Backend: Python, FastAPI, SQLAlchemy, Pydantic
-- Database: PostgreSQL
-- Containers: Docker, Docker Compose
-- CI: GitHub Actions
+## Technology Stack
 
-## Features
+### Frontend
 
-- Product CRUD with unique SKU validation and non-negative inventory
-- Customer create/list/detail/delete with unique email validation
-- Order create/list/detail/delete with backend-calculated totals
-- Inventory checks before order creation
-- Automatic stock reduction on order creation
-- Stock restoration when an order is cancelled/deleted
-- Dashboard totals for products, customers, orders, and low-stock products
-- Responsive React UI with form validation and success/error states
+* React.js
+* Vite
+* JavaScript (ES6+)
+* Lucide React Icons
+* Responsive CSS
 
-## Local Setup
+### Backend
 
-Copy the example environment file and adjust values as needed.
+* FastAPI
+* Python
+* SQLAlchemy ORM
+* Pydantic Validation
 
-```bash
-cp .env.example .env
-```
+### Database
 
-Run the full stack.
+* PostgreSQL
 
-```bash
-docker compose up --build
-```
+### DevOps & Deployment
 
-Open:
+* Docker
+* Docker Compose
+* GitHub Actions
+* Render
+* Vercel
 
-- Frontend: http://localhost:8080
-- Backend API: http://localhost:8000
-- API docs: http://localhost:8000/docs
+## Key Features
 
-## Backend Development
+### Inventory Management
 
-```bash
-cd backend
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements-dev.txt
-uvicorn app.main:app --reload
-pytest
-```
+* Complete product lifecycle management (Create, Read, Update, Delete)
+* SKU uniqueness validation
+* Real-time inventory tracking
+* Low-stock monitoring and alerts
+* Inventory consistency enforcement
 
-The backend uses `DATABASE_URL`. If no value is provided, it falls back to local SQLite for development convenience. Docker Compose uses PostgreSQL.
+### Customer Management
 
-## Frontend Development
+* Customer registration and profile management
+* Email uniqueness validation
+* Customer lookup and history tracking
+* Secure customer data handling
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+### Order Processing
 
-Set `VITE_API_URL` to the backend URL when running outside Docker.
+* Order creation and management
+* Automatic total amount calculation
+* Inventory availability verification
+* Automatic stock deduction upon order placement
+* Stock restoration on order cancellation or deletion
 
-## API Endpoints
+### Business Dashboard
 
-Products:
+* Real-time operational metrics
+* Product, customer, and order statistics
+* Revenue visualization
+* Low-stock monitoring dashboard
+* Activity tracking and reporting
 
-- `POST /products`
-- `GET /products`
-- `GET /products/{id}`
-- `PUT /products/{id}`
-- `DELETE /products/{id}`
+### Engineering Highlights
 
-Customers:
+* RESTful API architecture
+* Containerized deployment with Docker
+* PostgreSQL-backed persistence layer
+* Input validation and error handling
+* Responsive user interface
+* Cloud-ready deployment architecture
+* API documentation via Swagger/OpenAPI
+* CI/CD workflow support
 
-- `POST /customers`
-- `GET /customers`
-- `GET /customers/{id}`
-- `DELETE /customers/{id}`
+## Business Value
 
-Orders:
-
-- `POST /orders`
-- `GET /orders`
-- `GET /orders/{id}`
-- `DELETE /orders/{id}`
-
-Dashboard:
-
-- `GET /dashboard/summary`
-
-## Docker Images
-
-Build and push the backend image after creating a Docker Hub repository.
-
-```bash
-docker build -t <dockerhub-user>/inventory-order-api:latest ./backend
-docker push <dockerhub-user>/inventory-order-api:latest
-```
-
-Required submission value:
-
-```text
-Backend Docker Hub image: https://hub.docker.com/r/<dockerhub-user>/inventory-order-api
-```
-
-## Deployment
-
-### Backend on Render
-
-1. Create a PostgreSQL database on Render.
-2. Create a new Web Service from this repository.
-3. Set the root directory to `backend`.
-4. Use build command `pip install -r requirements.txt`.
-5. Use start command `uvicorn app.main:app --host 0.0.0.0 --port $PORT`.
-6. Set environment variables:
-   - `DATABASE_URL`: the Render PostgreSQL external/internal connection string
-   - `CORS_ORIGINS`: deployed frontend URL, for example `https://your-app.vercel.app`
-   - `LOW_STOCK_THRESHOLD`: `5`
-
-Required submission value:
-
-```text
-Live backend API URL: https://<your-render-service>.onrender.com
-```
-
-### Frontend on Vercel
-
-1. Import this repository into Vercel.
-2. Set the root directory to `frontend`.
-3. Set `VITE_API_URL` to the deployed backend URL.
-4. Build command: `npm run build`.
-5. Output directory: `dist`.
-
-Required submission value:
-
-```text
-Live frontend URL: https://<your-vercel-project>.vercel.app
-```
-
-### Frontend on Netlify
-
-1. Import this repository into Netlify.
-2. Set the base directory to `frontend`.
-3. Set `VITE_API_URL` to the deployed backend URL.
-4. Build command: `npm run build`.
-5. Publish directory: `dist`.
-
+This application demonstrates the implementation of a complete inventory and order management workflow commonly used in e-commerce, retail, warehouse, and distribution environments. It showcases proficiency in full-stack development, database design, API development, containerization, deployment automation, and cloud infrastructure management.
