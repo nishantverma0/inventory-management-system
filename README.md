@@ -149,10 +149,3 @@ Live frontend URL: https://<your-vercel-project>.vercel.app
 4. Build command: `npm run build`.
 5. Publish directory: `dist`.
 
-## Submission Checklist
-
-- GitHub repository link: add after pushing this project to GitHub
-- Docker Hub backend image link: add after pushing the backend image
-- Live frontend deployment URL: add after deploying to Vercel or Netlify
-- Live backend API URL: add after deploying to Render, Railway, or Fly.io
-
