@@ -4,7 +4,9 @@ import Header from "./Header";
 export default function Layout({
   page,
   setPage,
-  children
+  children,
+  darkMode,
+  setDarkMode,
 }) {
   return (
     <div className="layout">
@@ -14,7 +16,11 @@ export default function Layout({
       />
 
       <div className="content">
-        <Header />
+        <Header
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+        />
+
         <main>{children}</main>
       </div>
     </div>
